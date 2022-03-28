@@ -1,4 +1,4 @@
-import { GlobalStyle } from "@styles/global.style";
+import { GlobalStyle } from "~/styles/Global.style";
 import RootRouter from "./router";
 
 function App() {

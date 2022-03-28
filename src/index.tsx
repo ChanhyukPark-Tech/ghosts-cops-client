@@ -3,13 +3,14 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { theme } from "@styles/theme";
+import theme from "~/styles/theme.style";
 import App from "./App";
+import MainLayout from "./layouts/MainLayout";
 import reportWebVitals from "./reportWebVitals";
 import store from "./store";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <MainLayout>
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <BrowserRouter>
@@ -17,7 +18,7 @@ ReactDOM.render(
         </BrowserRouter>
       </Provider>
     </ThemeProvider>
-  </React.StrictMode>,
+  </MainLayout>,
   document.getElementById("root")
 );
 
