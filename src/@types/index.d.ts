@@ -1,5 +1,3 @@
-export declare global {
-  interface UserDto {
-    name: string;
-  }
-}
+declare module "*.png";
+declare module "*.gif";
+declare module "*.mp4";

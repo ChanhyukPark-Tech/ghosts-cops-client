@@ -8,17 +8,18 @@ import App from "./App";
 import MainLayout from "./layouts/MainLayout";
 import reportWebVitals from "./reportWebVitals";
 import store from "./store";
+import "~/styles/font-face.css";
 
 ReactDOM.render(
-  <MainLayout>
-    <ThemeProvider theme={theme}>
-      <Provider store={store}>
-        <BrowserRouter>
+  <ThemeProvider theme={theme}>
+    <Provider store={store}>
+      <BrowserRouter>
+        <MainLayout>
           <App />
-        </BrowserRouter>
-      </Provider>
-    </ThemeProvider>
-  </MainLayout>,
+        </MainLayout>
+      </BrowserRouter>
+    </Provider>
+  </ThemeProvider>,
   document.getElementById("root")
 );
 

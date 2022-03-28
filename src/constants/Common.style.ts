@@ -29,10 +29,15 @@ export const FlexBox = styled.div<{ direction?: string }>`
   display: flex;
 `;
 
-export const GImage = styled.img<{ width?: string; height?: string }>`
+export const GImage = styled.img<{
+  width?: string;
+  height?: string;
+  round?: boolean;
+}>`
   vertical-align: top;
   width: ${({ width }) => (width ? width : "auto")};
   height: ${({ height }) => (height ? height : "auto")};
+  border-radius: ${({ round }) => round && "50%"};
 `;
 export const FlexCenter = styled(FlexBox)`
   justify-content: center;
