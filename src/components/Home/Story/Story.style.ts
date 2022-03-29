@@ -11,3 +11,11 @@ export const Banner = styled.div`
     height: 100%;
   }
 `;
+
+export const TextWrapper = styled(FlexCenter)`
+  max-width: 70%;
+`;
+
+export const SubTextWrapper = styled.div`
+  max-width: 70%;
+`;

@@ -16,7 +16,7 @@ pipeline {
         stage('RUN CONTAINER') {
             steps {
                 sh'''
-                docker run -itd --name ghostscops -e VIRTUAL_HOST=ghostscops ghostscops:latest
+                docker run -itd --name ghostscops -p 80:80 ghostscops:latest
                 '''
             }
         }

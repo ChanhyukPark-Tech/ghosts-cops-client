@@ -19,10 +19,10 @@ const GHeader = () => {
           <Link to="minting" smooth spy offset={-HEADER_HEIGHT}>
             <SubTitle4>MINTING</SubTitle4>
           </Link>
-          <Link to="/" smooth spy>
+          <Link to="story" smooth spy>
             <SubTitle4>STORY</SubTitle4>
           </Link>
-          <Link to="/" smooth spy>
+          <Link to="weare" smooth spy>
             <SubTitle4>WE ARE</SubTitle4>
           </Link>
         </Styled.NavWrapper>
