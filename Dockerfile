@@ -2,7 +2,6 @@ FROM node:14 as build-stage
 
 WORKDIR /app
 ADD . .
-RUN npm cache clear
 RUN npm install
 RUN npm run build
 
