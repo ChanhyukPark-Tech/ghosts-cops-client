@@ -10,7 +10,6 @@ pipeline {
                     docker stop ghostscops && docker rm ghostscops
                 fi
                 docker build -t ghostscops .
-                docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
                 '''
             }
         }
