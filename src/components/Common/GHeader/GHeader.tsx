@@ -1,38 +1,37 @@
 import React from "react";
-import {
-  Body1,
-  Body3,
-  Body4,
-  Body6,
-  SubTitle3,
-  SubTitle4
-} from "~/constants/Typography";
+import { SubTitle3, SubTitle4 } from "~/constants/Typography";
 import * as Styled from "./GHeader.style";
 import logo from "~/assets/videos/Common/logo.gif";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import Colors from "~/constants/Colors";
+import { HEADER_HEIGHT } from "~/constants/Variables";
 const GHeader = () => {
   return (
-    <Styled.Container>
-      <Styled.LogoWrapper src={logo} alt="logo" round />
-      <Styled.NavWrapper>
-        <Link to="/">
-          <SubTitle4>GHOSTSCOPS</SubTitle4>
+    <>
+      <Styled.Container>
+        <Link to="/" smooth>
+          <Styled.LogoWrapper src={logo} alt="logo" round />
         </Link>
-        <Link to="/">
-          <SubTitle4>MEMORIES</SubTitle4>
-        </Link>
-        <Link to="/">
-          <SubTitle4>STORY</SubTitle4>
-        </Link>
-        <Link to="/">
-          <SubTitle4>WE ARE</SubTitle4>
-        </Link>
-      </Styled.NavWrapper>
-      <Styled.WalletButton>
-        <SubTitle3 color={Colors.yellow}>CONNECT WALLET</SubTitle3>
-      </Styled.WalletButton>
-    </Styled.Container>
+        <Styled.NavWrapper>
+          <Link to="ghostscops" smooth spy offset={-HEADER_HEIGHT}>
+            <SubTitle4>GHOSTSCOPS</SubTitle4>
+          </Link>
+          <Link to="minting" smooth spy offset={-HEADER_HEIGHT}>
+            <SubTitle4>MINTING</SubTitle4>
+          </Link>
+          <Link to="/" smooth spy>
+            <SubTitle4>STORY</SubTitle4>
+          </Link>
+          <Link to="/" smooth spy>
+            <SubTitle4>WE ARE</SubTitle4>
+          </Link>
+        </Styled.NavWrapper>
+        <Styled.WalletButton>
+          <SubTitle3 color={Colors.yellow}>CONNECT WALLET</SubTitle3>
+        </Styled.WalletButton>
+      </Styled.Container>
+      <Styled.EmptyHeader />
+    </>
   );
 };
 

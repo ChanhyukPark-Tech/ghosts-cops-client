@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import GHeader from "~/components/Common/GHeader/GHeader";
 import Colors from "~/constants/Colors";
+import { SizedBox } from "~/constants/Common.style";
 import { GlobalStyle } from "~/styles/Global.style";
 
 type MainLayoutPropsType = {
