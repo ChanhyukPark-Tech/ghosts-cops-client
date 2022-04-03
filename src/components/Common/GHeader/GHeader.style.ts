@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Colors from "~/constants/Colors";
 import { FlexBox, FlexCenter, GImage } from "~/constants/Common.style";
 import { vw } from "~/constants/Size";
+import { Body1 } from "~/constants/Typography";
 import { HEADER_HEIGHT } from "~/constants/Variables";
 
 export const Container = styled(FlexBox)`
@@ -57,6 +58,12 @@ export const WalletButton = styled.button`
       color: ${Colors.black};
     }
   }
+`;
+export const Account = styled(Body1)`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100px;
 `;
 
 export const EmptyHeader = styled.div`
