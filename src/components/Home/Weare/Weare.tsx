@@ -1,10 +1,10 @@
 import React from "react";
-import * as Styled from "./Weare.style";
 import weareText from "~/assets/images/Home/Weare/weareText.webp";
 import logo from "~/assets/videos/Common/logo.gif";
-
 import { GImage, SizedBox } from "~/constants/Common.style";
-import { Body1, Body3 } from "~/constants/Typography";
+import { Body1 } from "~/constants/Typography";
+import * as Styled from "./Weare.style";
+
 const Weare = () => {
   return (
     <Styled.Container id="weare" direction="column">
