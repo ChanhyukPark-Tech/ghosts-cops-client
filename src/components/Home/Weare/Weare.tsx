@@ -14,15 +14,10 @@ const Weare = () => {
       <SizedBox height={50} />
       <Styled.TextWrapper>
         <Body1 alignCenter>
-          Mr. Misang is building a metaverse virtual world, starting with an
-          animation project called « Modern Life is Rubbish » (MLIR). In April
-          of this year, he made a plan to show the story before MLIR through the
-          avatar project, and shared it with the NFT DAO, « HanDAO ». We
-          sympathized with each other's vision and started making 'Ghost
-          Project' together. All elements of 'Ghost' were designed by Mr. Misang
-          himself in consideration of movement. Both Mr. Misang and the MYTY
-          team strongly believe that ‘Avatar' is an alter ego and must be able
-          to move at our own will.'
+          The Ghost Cops Project (GCOPS) is a team of college students inspired
+          by Mr. Misang's Ghost Project. The GCOPS team currently consists of
+          one web developer, one blockchain developer, and three NFT Product
+          Designer and developers.
         </Body1>
       </Styled.TextWrapper>
     </Styled.Container>

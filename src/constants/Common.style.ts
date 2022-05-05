@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { media } from "~/utils/Media";
 import Colors from "./Colors";
 import { vw, vwMobile, vwTablet } from "./Size";
@@ -42,4 +42,15 @@ export const GImage = styled.img<{
 export const FlexCenter = styled(FlexBox)`
   justify-content: center;
   align-items: center;
+`;
+
+export const UpAnimation = (offset?: number) => keyframes`
+  0% {
+    transform: translate3d(0,${offset ? offset : 30}%,0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0,0,0);
+    opacity: 1;
+  }
 `;

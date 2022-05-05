@@ -1,8 +1,8 @@
 import React from "react";
-import * as Styled from "./Story.style";
 import banner from "~/assets/images/Home/Story/banner.webp";
 import { GImage } from "~/constants/Common.style";
-import { Body2, Body4, Header0 } from "~/constants/Typography";
+import { Body2, Header1 } from "~/constants/Typography";
+import * as Styled from "./Story.style";
 const Story = () => {
   return (
     <Styled.Container id="story" direction="column">
@@ -10,15 +10,17 @@ const Story = () => {
         <GImage src={banner} alt="banner" />
       </Styled.Banner>
       <Styled.TextWrapper direction="column">
-        <Header0>WHAT HAPPENED BEFORE THESE STORIES?</Header0>
+        <Header1>
+          We're the real ones, the people's staff, who find "fake"!
+        </Header1>
         <Styled.SubTextWrapper>
           <Body2 alignCenter>
-            Before the series ‘Modern life is Rubbish’ by Mr.Misang. The story
-            of when the world was more colorful than today. In unknown dark
-            space, a black portal opened. We succeeded in contacting the ghosts
-            of long-dead people. Why do all citizens in 'Modern Life is Rubbish'
-            look similar? Was this world like this from the beginning? Let's
-            call out ghosts, revive memories, and be possessed.
+            Our society today is well-organized, rolling like a cogwheel!
+            There's an answer on the busy way to work every morning. It's better
+            to take a crowded subway than to get stuck in rush hour for regular
+            work You have grim faces? No, social life starts with the company
+            lobby Hey, you're a little suspicious. Come here. Check! You seem to
+            have a lot of thoughts!
           </Body2>
         </Styled.SubTextWrapper>
       </Styled.TextWrapper>
