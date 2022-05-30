@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import { Body1, Body4, SubTitle3, SubTitle4 } from "~/constants/Typography";
-import * as Styled from "./GHeader.style";
-import logo from "~/assets/videos/Common/logo.gif";
-import { Link } from "react-scroll";
-import Colors from "~/constants/Colors";
-import { HEADER_HEIGHT } from "~/constants/Variables";
 import { ethers } from "ethers";
-import { FlexCenter } from "~/constants/Common.style";
+import React, { useState } from "react";
+import { Link } from "react-scroll";
+import logo from "~/assets/videos/Common/logo.gif";
+import Colors from "~/constants/Colors";
+import { SubTitle3, SubTitle4 } from "~/constants/Typography";
+import { HEADER_HEIGHT } from "~/constants/Variables";
+import * as Styled from "./GHeader.style";
 const GHeader = () => {
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [defaultAccount, setDefaultAccount] = useState<string | null>(null);
@@ -36,30 +35,6 @@ const GHeader = () => {
   const disconnectWallerHandler = () => {
     console.log("disconnect");
   };
-
-  async function MINTNFT() {
-    let provider = new ethers.providers.Web3Provider(window.ethereum)
-    let signer = provider.getSigner();
-    let abiCoder = ethers.utils.defaultAbiCoder;
-    let contractAddress = '0x0994CD9820fb51FB834cEd89DCc75b54D1BAfcCa';
-    let abi = require("../ghostcops.json");
-    let ghostcontract = new ethers.Contract(contractAddress, abi, provider);
-    try {
-      let rawTxn = await ghostcontract.populateTransaction.mintGhost({
-        value: '0x470DE4DF820000'
-      })
-      let signedTxn = signer.sendTransaction(rawTxn)
-      let reciept = (await signedTxn).wait()
-      if (reciept) {
-        console.log("Transaction is successful!!!" + '\n' + "Transaction Hash:", (await signedTxn).hash + '\n' + "Block Number:" + (await reciept).blockNumber + '\n' + "Navigate to https://polygonscan.com/tx/" + (await signedTxn).hash, "to see your transaction")
-      } else {
-        console.log("Error submitting transaction")
-      }
-    } catch (e) {
-      console.log("Error Caught in Catch Statement: ", e)
-    }
-  }
-
 
   // update account, will cause component re-render
   const accountChangedHandler = (newAccount: string | null) => {
@@ -119,22 +94,6 @@ const GHeader = () => {
             {connButtonText}
           </SubTitle3>
         </Styled.WalletButton>
-        {defaultAccount && (
-          <FlexCenter direction="column">
-            <Styled.Account>{defaultAccount}</Styled.Account>
-            <Body1>{userBalance} ETH</Body1>
-            <Styled.WalletButton>
-              <SubTitle3
-                color={Colors.yellow}
-                onClick={
-                  MINTNFT
-                }
-              >
-                MINT
-              </SubTitle3>
-            </Styled.WalletButton>
-          </FlexCenter>
-        )}
       </Styled.Container>
       <Styled.EmptyHeader />
     </>
