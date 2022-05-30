@@ -37,6 +37,30 @@ const GHeader = () => {
     console.log("disconnect");
   };
 
+  async function MINTNFT() {
+    let provider = new ethers.providers.Web3Provider(window.ethereum)
+    let signer = provider.getSigner();
+    let abiCoder = ethers.utils.defaultAbiCoder;
+    let contractAddress = '0x0994CD9820fb51FB834cEd89DCc75b54D1BAfcCa';
+    let abi = require("../ghostcops.json");
+    let ghostcontract = new ethers.Contract(contractAddress, abi, provider);
+    try {
+      let rawTxn = await ghostcontract.populateTransaction.mintGhost({
+        value: '0x470DE4DF820000'
+      })
+      let signedTxn = signer.sendTransaction(rawTxn)
+      let reciept = (await signedTxn).wait()
+      if (reciept) {
+        console.log("Transaction is successful!!!" + '\n' + "Transaction Hash:", (await signedTxn).hash + '\n' + "Block Number:" + (await reciept).blockNumber + '\n' + "Navigate to https://polygonscan.com/tx/" + (await signedTxn).hash, "to see your transaction")
+      } else {
+        console.log("Error submitting transaction")
+      }
+    } catch (e) {
+      console.log("Error Caught in Catch Statement: ", e)
+    }
+  }
+
+
   // update account, will cause component re-render
   const accountChangedHandler = (newAccount: string | null) => {
     setDefaultAccount(newAccount);
@@ -99,6 +123,16 @@ const GHeader = () => {
           <FlexCenter direction="column">
             <Styled.Account>{defaultAccount}</Styled.Account>
             <Body1>{userBalance} ETH</Body1>
+            <Styled.WalletButton>
+              <SubTitle3
+                color={Colors.yellow}
+                onClick={
+                  MINTNFT
+                }
+              >
+                MINT
+              </SubTitle3>
+            </Styled.WalletButton>
           </FlexCenter>
         )}
       </Styled.Container>

@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <Styled.Container>
       <Ghostscops />
-      <Minting />
+      {/* <Minting /> */}
       <Story />
       <Weare />
     </Styled.Container>
